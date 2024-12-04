@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COMMUNITY FORUM</title>
+</head>
+<body>
+<h1>Community Forum</h1>
+<a href="{% url 'create_post' %}">Create Post</a>
+<ul>
+    {% for post in posts %}
+    <li>
+        <a href="{% url 'post_detail' post.id%}">{{ post.content }}</a> by {{ post.user_id }}
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COMMUNITY FORUM</title>
+</head>
+<body>
+<p>{{ post.content }}</p>
+<p>Posted by: {{ post.user_id }}</p>
+
+<h2>Comments</h2>
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment.content }} - {{ comment.user_id}}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'add_comment' post.id %}">Add Comment</a>
+
+</body>
+</html>
